@@ -35,13 +35,20 @@
             <hr>
 
             <div class="row">
-                <div class="col-md-12">Latest blog post goes here!</div>
+                <div class="col-md-6 well">
+                    <h3>Checkout our latest post!</h3>
+                    <h4>{{ latest_post.title }}</h4>
+                    <div>by {{ latest_post.author }} on {{ latest_post.created }}</div>
+                    <a href="{% url "post" latest_post.pk %}">Read it!</a>
+                </div>
             </div>
 
             <hr>
 
             <div class="footer">
                 <p>&copy; My Blog 2014</p>
+
+                <div class="pull-right">Welcome user from {{ location.city }}!</div>
             </div>
         </div>
     </body>
