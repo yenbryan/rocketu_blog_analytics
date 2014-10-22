@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Posts in <b>{{ tag }}</b></h1> <br>
+            {% include 'includes/post-listings.html' %}
+{#            {% for post in posts %}#}
+{#            <a href="{% url "post" post.pk %}">{{ post.title }}</a>#}
+{#            {{ post.created }}<br>#}
+{#            {% endfor %}#}
+
+        </div>
+    </div>
+
+    <br>
+{% endblock main %}

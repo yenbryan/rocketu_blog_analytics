@@ -1,3 +1,6 @@
 from django.contrib import admin
+from analytics.models import Page, View, Location
 
-# Register your models here.
+admin.site.register(Page)
+admin.site.register(View)
+admin.site.register(Location)

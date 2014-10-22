@@ -29,6 +29,9 @@
 
                 <div class="col-md-2">
                     <div>Blog tags go here!</div>
+                    {% for tag in all_tags %}
+                        <p><a href="{% url 'view_tag' tag.name %}">{{ tag }}</a> - {{ tag.posts.count }}</p>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -36,11 +39,32 @@
 
             <div class="row">
                 <div class="col-md-12">Latest blog post goes here!</div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 well">
+                    <h3>Checkout our latest post!</h3>
+                    <h4>{{ latest_post.title }}</h4>
+                    <div>by {{ latest_post.author }} on {{ latest_post.created }}</div>
+                    <a href="{% url 'post' latest_post.pk %}">Read it!</a>
+                </div>
             </div>
 
             <hr>
 
             <div class="footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pull-right">
+                            <a href="{{ ad.url }}">
+                                <img class="img-responsive" alt="ad here!" src="{{ ad.ad_image.url }}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right">Welcome user from {{ location.city }}!</div>
+                    </div>
+                </div>
                 <p>&copy; My Blog 2014</p>
             </div>
         </div>

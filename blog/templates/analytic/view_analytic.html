@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Analytics page</h1>
+            {% for page_view in page_view_counts %}
+                {% with page_view.page as page_number %}
+                    {{ pages.page_number }}
+                {% endwith %}
+                - {{ page_view.number_of_views }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock main %}

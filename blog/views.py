@@ -1,5 +1,7 @@
+import random
 from django.shortcuts import render, get_object_or_404
-from blog.models import Post
+from django.shortcuts import render_to_response
+from blog.models import Post, Tag
 
 
 def blog(request):
@@ -13,4 +15,12 @@ def post(request, pk):
 
     return render(request, 'post.html', {
         'post': post_obj
+    })
+
+
+def view_tag(request, tag_name):
+
+    return render(request,'view_tag.html',{
+        'posts': Post.objects.filter(tags__name=tag_name),
+        'tag': tag_name
     })
