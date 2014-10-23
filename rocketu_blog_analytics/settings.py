@@ -51,6 +51,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'analytics.middleware.LocationMiddleware',
     "analytics.middleware.PageViewMiddleware",
+    'appenlight_client.django_middleware.AppenlightMiddleware',
+    'django.middleware.common.CommonMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

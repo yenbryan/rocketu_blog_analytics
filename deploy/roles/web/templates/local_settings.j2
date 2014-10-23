@@ -19,3 +19,8 @@ ALLOWED_HOSTS = ['{{ nginx_server_name }}']
 RAVEN_CONFIG = {
     'dsn': 'https://be3a98a42355486eab322c7e0ca5ee93:117ddafaf4a14164b1ca10982ae1dd28@app.getsentry.com/32037',
 }
+
+import appenlight_client.client as e_client
+APPENLIGHT = e_client.get_config({
+'appenlight.api_key':'01dc27e92fb44f02b7fce3185156a779'
+})
