@@ -7,6 +7,7 @@ PyYAML==3.11
 ansible==1.7.2
 django-ipware==0.1.0
 ecdsa==0.11
+newrelic==2.34.0.29
 paramiko==1.15.1
 psycopg2==2.5.4
 pycrypto==2.6.1

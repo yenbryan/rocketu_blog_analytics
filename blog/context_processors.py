@@ -22,7 +22,8 @@ def list_months(request):
 
 def random_targeted_ad(request):
     # Get location of user and get random ad from its region
-    random_idx = random.randint(0, Ad.objects.count() - 1)
+    # random_idx = random.randint(0, Ad.objects.count() - 1)
     return {
-        'ad' : Ad.objects.filter(region=request.location['region'])[random_idx]
+        'ad': ''
+        # 'ad' : Ad.objects.filter(region=request.location['region'])[random_idx]
     }
